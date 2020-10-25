@@ -15,22 +15,13 @@ collections:
     create: true # Allow users to create new documents in this collection
     description: All fields are required except Images and Description.
     fields: # The fields for each document, usually in front matter
-      - {label: Name, name: name, widget: string, required: true}
-      - {label: "Product Code", name: title, widget: string, required: true}
-      - label: "Product Tags/Categories"
-        name: tags
-        widget: relation
-        collection: tags
-        value_field: title
-        multiple: true
-        search_fields: [ "name" ]
-        display_fields: [ "name" ]
-        required: true
+      - {label: Name, name: name, widget: string, required: false}
+      - {label: "Product Code", name: title, widget: string}
       - label: Images
         widget: image
         name: images
         default: /images/250.png
-      - {label: "Description", name: "description", widget: "markdown"}
+      - {label: "Description", name: "description", widget: "markdown", required: false}
 
   - name: tags
     label: Tag
@@ -44,6 +35,15 @@ collections:
       - label: URL Shortname
         name: title
         required: true
+      - label: "Products"
+        name: products
+        widget: relation
+        collection: products
+        value_field: title
+        multiple: true
+        search_fields: [ "name", "title" ]
+        display_fields: [ "name", "title" ]
+        required: true
 
   - name: categories
     label: Category
@@ -56,4 +56,13 @@ collections:
         required: true
       - label: URL Shortname
         name: title
+        required: true
+      - label: "Tags"
+        name: tags
+        widget: relation
+        collection: tags
+        value_field: title
+        multiple: true
+        search_fields: [ "name", "title" ]
+        display_fields: [ "name", "title" ]
         required: true

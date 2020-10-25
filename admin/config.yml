@@ -7,35 +7,41 @@ backend:
 media_folder: "images/uploads"
 
 collections:
-  - name: "product" # Used in routes, e.g., /admin/collections/blog
-    label: "Product" # Used in the UI
+  - name: products # Used in routes, e.g., /admin/collections/blog
+    label: Product # Used in the UI
     folder: "_products/" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{ code }}" # Filename template, e.g., YYYY-MM-DD-title.md
+    description: All fields are required except Images and Description.
     fields: # The fields for each document, usually in front matter
-      - {label: "Name", name: "name", widget: "string"}
-      - {label: "Product Code", name: "code", widget: "string"}
-
-      - label: "Product Tags"
-        name: "tags"
-        widget: "relation"
+      - {label: Name, name: name, widget: string, required: true}
+      - {label: "Product Code", name: code, widget: string, required: true}
+      - label: "Product Tags/Categories"
+        name: tags
+        widget: relation
         collection: tags
-        value_field: tag.name
+        value_field: url_shortname
         multiple: true
-        search_fields: [ "tag.name" ]
-
+        search_fields: [ "name" ]
+        display_fields: [ "name" ]
+        required: true
       - label: Images
         name: images
         default: https://via.placeholder.com/250
-
       - {label: "Description", name: "description", widget: "markdown"}
 
-  - name: tag
-    label: "Tag"
+  - name: tags
+    label: Tag/Category
     folder: "_tags/"
     create: true
-    slug: "{{ tag }}"
+    slug: "{{ url_shortname }}"
+    description: Both values here should be unique. Please follow the example pattern for URL Shortname.
     fields:
-      - label: name
+      - label: URL Shortname
+        comment: eg. bathroom-tiles for "Bathroom Tiles"
+        name: url_shortname
+        required: true
+      - label: Display Name
         name: name
+        required: true
 

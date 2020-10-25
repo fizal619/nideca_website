@@ -26,8 +26,9 @@ collections:
         display_fields: [ "name" ]
         required: true
       - label: Images
+        widget: image
         name: images
-        default: https://via.placeholder.com/250
+        default: /images/250.png
       - {label: "Description", name: "description", widget: "markdown"}
 
   - name: tags

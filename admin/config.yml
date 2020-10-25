@@ -15,5 +15,27 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {label: "Name", name: "name", widget: "string"}
       - {label: "Product Code", name: "code", widget: "string"}
-      - {label: "Tags", name: "tags", widget: "list"}
+
+      - label: "Product Tags"
+        name: "tags"
+        widget: "relation"
+        collection: tags
+        value_field: tag.name
+        multiple: true
+        search_fields: [ "tag.name" ]
+
+      - label: Images
+        name: images
+        default: https://via.placeholder.com/250
+
       - {label: "Description", name: "description", widget: "markdown"}
+
+  - name: tag
+    label: "Tag"
+    folder: "_tags/"
+    create: true
+    slug: "{{ tag }}"
+    fields:
+      - label: name
+        name: name
+

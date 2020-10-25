@@ -33,16 +33,27 @@ collections:
       - {label: "Description", name: "description", widget: "markdown"}
 
   - name: tags
-    label: Tag/Category
+    label: Tag
     folder: "_tags/"
     create: true
     description: Both values here should be unique. Please follow the example pattern for URL Shortname.
     fields:
-      - label: URL Shortname
-        description: eg. bathroom-tiles for "Bathroom Tiles"
-        name: title
-        required: true
       - label: Display Name
         name: name
         required: true
+      - label: URL Shortname
+        name: title
+        required: true
 
+  - name: categories
+    label: Category
+    folder: "_categories/"
+    create: true
+    description: Both values here should be unique. Please follow the example pattern for URL Shortname.
+    fields:
+      - label: Display Name
+        name: name
+        required: true
+      - label: URL Shortname
+        name: title
+        required: true

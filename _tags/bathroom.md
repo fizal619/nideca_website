@@ -1,4 +1,0 @@
----
-title: bathroom
-name: Bathroom
----

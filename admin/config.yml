@@ -4,8 +4,6 @@ backend:
   branch: master
   site_domain: nideca.netlify.app
 
-local_backend: true
-
 media_folder: "images/uploads"
 
 collections:
@@ -13,7 +11,7 @@ collections:
     label: Product # Used in the UI
     folder: "_products/" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    description: All fields are required except Images and Description.
+    summary: "{{ fields.title }}"
     fields: # The fields for each document, usually in front matter
       - {label: Name, name: name, widget: string, required: false}
       - {label: "Product Code", name: title, widget: string}
@@ -27,7 +25,6 @@ collections:
     label: Tag
     folder: "_tags/"
     create: true
-    description: Both values here should be unique. Please follow the example pattern for URL Shortname.
     fields:
       - label: Display Name
         name: name
@@ -49,7 +46,6 @@ collections:
     label: Category
     folder: "_categories/"
     create: true
-    description: Both values here should be unique. Please follow the example pattern for URL Shortname.
     fields:
       - label: Display Name
         name: name

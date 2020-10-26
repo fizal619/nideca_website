@@ -1,3 +1,10 @@
 .category-container {
   background-color: #FAFAFA;
 }
+
+.view-more {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-end;
+}

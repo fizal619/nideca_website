@@ -1,6 +1,14 @@
 <link rel="stylesheet" href="/css/products.css" />
 
-<div class="products-container">
+{% if include.summary %}
+  {% assign overflow = "scroll" %}
+  {% assign limit = 10 %}
+{% else %}
+  {% assign overflow = "auto" %}
+  {% assign limit = include.products.size %}
+{% endif %}
+
+<div class="products-container" style="overflow: '{{ overflow }}';">
 
   {% if include.summary %}
     {% for product in include.products limit: 10 %}
@@ -11,5 +19,6 @@
       {% include product_card.html product=product %}
     {% endfor %}
   {% endif %}
-
+  <br>
+  <br>
 </div>

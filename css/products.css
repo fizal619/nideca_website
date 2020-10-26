@@ -1,18 +1,28 @@
+.products-container {
+  width: 100%;
+}
+
 .products-container p, .products-container p {
   font-size: 14px;
   line-height: normal;
 }
 
 .product-card {
-  width: 250px;
+  width: 160px;
+  display: inline-block;
+  margin: 0 20px 0 0;
 }
 
 .product-card .card-img {
-  height: 250px;
-  width: 250px;
+  height: 200px;
+  width: 100%;
   background-size: cover;
 }
 
 .product-card .card-title {
   text-align: center;
+}
+
+.card-img {
+  cursor: pointer;
 }

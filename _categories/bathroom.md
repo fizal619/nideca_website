@@ -2,5 +2,5 @@
 name: Bathroom
 title: bathroom
 tags:
-  - sinks
+  - bathroom-sinks
 ---

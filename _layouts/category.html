@@ -14,12 +14,12 @@ layout: main
     <br>
     {% for tag in page.tags %}
       {% assign tagObj = site.tags | where:"title", tag  | first %}
-
-      <p>{{ tagObj.name }}</p>
-
+      <p>{{ tagObj.shortname }}</p>
       {% include products_list.html products=tagObj.products summary=true %}
-
-
+      <p class="view-more">
+        <a href="{{ tagObj.slug }}" class="btn btn-outline-primary">VIEW MORE</a>
+      </p>
+      <br>
     {% endfor %}
   </div>
 </div>

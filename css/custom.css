@@ -28,11 +28,18 @@ a.btn {
   padding-bottom: 1em;
   padding-left: 1.44em;
   letter-spacing: .2em;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
   border-width: 2px;
   line-height: 1em;
   text-rendering: optimizeLegibility;
+  border-color: #222;
+  color: #222;
+}
+
+a.btn:hover {
+  background-color: #222;
+  border-color: #222;
 }
 
 .homebg {
@@ -74,6 +81,7 @@ a.btn {
   color: white;
   border-bottom: 1px solid rgba(255,255,255,0.5);
   font-weight: bold;
+  font-size: 18px;
   transition: border-color 170ms ease-in-out;
 }
 
@@ -86,6 +94,7 @@ a.btn {
 .home a.btn.link-white {
   text-decoration: none;
   border-color: white;
+  font-size: 14px;
   text-transform: uppercase;
 }
 

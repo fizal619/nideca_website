@@ -1,0 +1,18 @@
+---
+layout: main
+---
+
+<link rel="stylesheet" href="/css/category.css">
+
+<div class="category-container">
+  <br>
+  <br>
+  <br>
+  <div class="container">
+
+    <h2>{{ page.name }}</h2>
+    <br>
+    {% include products_list.html products=page.products %}
+
+  </div>
+</div>

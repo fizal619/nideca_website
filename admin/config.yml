@@ -31,6 +31,9 @@ collections:
       - label: Display Name
         name: name
         required: true
+      - label: Shortname
+        name: shortname
+        required: true
       - label: URL Shortname
         name: title
         required: true

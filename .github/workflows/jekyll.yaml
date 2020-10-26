@@ -28,7 +28,6 @@ jobs:
           sudo apt-get install graphicsmagick
           echo "DEBUG >"
           cat /etc/ImageMagick-6/policy.xml | sed 's/none/read,write/g' | sudo tee /etc/ImageMagick-6/policy.xml
-          cat /etc/ImageMagick-8/policy.xml | sed 's/none/read,write/g' | sudo tee /etc/ImageMagick-8/policy.xml
 
 
       - uses: helaili/jekyll-action@2.0.1

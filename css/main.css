@@ -135,9 +135,7 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
   list-style-type: none;
   width:90%;
 }
-#overlay ul li {
-  padding: 1em;
-}
+
 #overlay ul li a {
   font-size: 1.5em;
   color: #222;

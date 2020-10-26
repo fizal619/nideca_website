@@ -28,7 +28,7 @@ jobs:
         run: |-
           echo "DEBUG >"
           sudo apt-get install libmagickwand-dev
-
+          cat /etc/ImageMagick-6/policy.xml | sed 's/none/read,write/g' | sudo tee /etc/ImageMagick-6/policy.xml
 
       - uses: actions/setup-ruby@v1
         with:
@@ -46,3 +46,5 @@ jobs:
           EMAIL: fizal.sarif@gmail.com
           GH_TOKEN: ${{ secrets.JEKYLL_PAT }}
           BUILD_DIR: _site
+          CNAME: nideca.fizal.me
+          JEKYLL_SITE: YES

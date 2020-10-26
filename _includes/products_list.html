@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="/css/products.css" />
+
+<div class="products-container">
+
+  {% if include.summary %}
+    {% for product in include.products limit: 10 %}
+      {% include product_card.html product=product %}
+    {% endfor %}
+  {% else %}
+    {% for product in include.products %}
+      {% include product_card.html product=product %}
+    {% endfor %}
+  {% endif %}
+
+</div>

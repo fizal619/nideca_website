@@ -1,0 +1,18 @@
+.products-container p, .products-container p {
+  font-size: 14px;
+  line-height: normal;
+}
+
+.product-card {
+  width: 250px;
+}
+
+.product-card .card-img {
+  height: 250px;
+  width: 250px;
+  background-size: cover;
+}
+
+.product-card .card-title {
+  text-align: center;
+}

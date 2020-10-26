@@ -1,0 +1,36 @@
+---
+layout: default
+---
+<link rel="stylesheet" href="/css/main.css">
+
+<div class="top-bar"></div>
+<div class="container">
+  <header>
+    <nav>
+      <div class="desktop-menu">
+        <a class="nav-link" href="/">Home</a>
+        {% for category in site.categories %}
+          <a class="nav-link" href="{{ category.slug }}">{{ category.name }}</a>
+        {% endfor %}
+        <a class="nav-link" href="/contact">Contact</a>
+      </div>
+      <div class="mobile-menu">
+
+      </div>
+    </nav>
+    <br>
+    <div class="desktop-header">
+      <h1>{{ site.title }}</h1>
+    </div>
+  </header>
+</div>
+
+<br>
+
+{{ content }}
+
+
+<footer>
+
+
+</footer>

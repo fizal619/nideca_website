@@ -1,0 +1,7 @@
+
+{% assign productObj = site.products | where:"title", include.product | first %}
+
+<div class="product-card">
+  <div class="card-img" style="background-image: url('{{ productObj.images }}');"></div>
+  <div class="card-title">{{ productObj.title }}</div>
+</div>

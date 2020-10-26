@@ -3,9 +3,105 @@
 
 body {
   font-family: 'Lato', sans-serif;
+  text-rendering: optimizeLegibility;
 }
 
 h4 {
   font-family: 'Playfair Display', serif;
+  font-size: 24px;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+p, a {
+  font-size: 18px;
+}
+
+a.btn {
+  padding-top: 1em;
+  padding-right: 1.44em;
+  padding-right: calc(1.44em - .2em);
+  padding-bottom: 1em;
+  padding-left: 1.44em;
+  letter-spacing: .2em;
+  font-size: 14px;
+  font-weight: bold;
+  border-width: 2px;
+  line-height: 1em;
+  text-rendering: optimizeLegibility;
+}
+
+.homebg {
+  background-color: rgba(0,0,0,1);
+}
+
+.home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.home h4 {
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  line-height: 1em;
+}
+
+.home h1 {
+  text-transform: capitalize;
+  letter-spacing: 0em;
+  line-height: 1em;
+  font-size: 49px;
+}
+
+
+.home p {
+  line-height: 1.4em;
+  font-size: 18px;
+  text-transform: capitalize;
+  letter-spacing: .04em;
+}
+
+.home a.link-white {
+  color: white;
+  border-bottom: 1px solid rgba(255,255,255,0.5);
+  font-weight: bold;
+  transition: border-color 170ms ease-in-out;
+}
+
+.home a.link-white:hover {
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,1);
+}
+
+.home a.btn.link-white {
+  text-decoration: none;
+  border-color: white;
+  text-transform: uppercase;
+}
+
+.home a.btn.link-white:hover {
+  background: white;
+  color: black;
+}
+
+.home-buttons a {
+  margin: 0 5px;
+}
+
+
+@media only screen and (max-width: 500px) {
+  .home h4 {
+    font-size: 20px;
+  }
 }
 

@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Nideca Investments Inc
+title: Nideca Investments Inc.
 email: nidecainvestments@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   We deal only with high quality home products, such as porcelain tiles, granite tiles and counter tops, bathroom and bathroom fixtures and many more items.
@@ -31,6 +31,40 @@ github_username:  jekyll
 theme: minima
 plugins:
   - jekyll-feed
+
+
+collections:
+  categories:
+    output: true
+    permalink: /:name
+  tags:
+    output: true
+    permalink: /:name
+  products:
+    output: true
+    permalink: /:name
+
+
+defaults:
+  - scope:
+      path: ""
+      type: "categories"
+    values:
+      layout: "category"
+  - scope:
+      path: ""
+      type: "tags"
+    values:
+      layout: "tag"
+  - scope:
+      path: ""
+      type: "products"
+    values:
+      layout: "product"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
 
 # Exclude from processing.
 # The following items will not be processed, by default.

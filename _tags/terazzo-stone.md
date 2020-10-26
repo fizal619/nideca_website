@@ -1,7 +1,7 @@
 ---
 name: Terrazo Stone
 shortname: Terrazo
-title: terrazo-stone
+title: terazzo-stone
 products:
   - S013M
   - S014LM

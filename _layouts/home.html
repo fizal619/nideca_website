@@ -2,24 +2,28 @@
 layout: default
 ---
 <div class="homebg">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="home col-md-8 col-sm-10">
-        <h4>{{ site.title }}</h4>
-        <br>
-        <h1>Browse Our Collections</h1>
-        <br>
-        {% for category in site.categories %}
-          <p>
-            <a class="link-white" href="{{ category.slug }}"> {{ category.name }} </a>
+  <div class="homebg-filter">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="home col-md-8 col-sm-10">
+          <h4>{{ site.title }}</h4>
+          <br>
+          <h1>Browse Our Collections</h1>
+          <br>
+          {% for category in site.categories %}
+            <p>
+              <a class="link-white" href="{{ category.slug }}"> {{ category.name }} </a>
+            </p>
+          {% endfor %}
+          <br>
+          <p class="home-buttons">
+            <a href="/contact" class="btn btn-outline-primary link-white">Contact Us</a>
+            <a href="tel:+5926464125" class="btn btn-outline-primary link-white">Call Now (GY)</a>
           </p>
-        {% endfor %}
-        <br>
-        <p class="home-buttons">
-          <a href="/contact" class="btn btn-outline-primary link-white">Contact Us</a>
-          <a href="tel:+5926464125" class="btn btn-outline-primary link-white">Call Now (GY)</a>
-        </p>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+

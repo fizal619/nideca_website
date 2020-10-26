@@ -27,12 +27,12 @@
   transition: border-color 170ms ease-in-out;
 }
 
-.desktop-header {
+.desktop-header h1 {
   font-family: 'Playfair Display', serif;
   text-align: center;
   color: #222;
   font-size: 36px;
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
   text-transform: none;
   letter-spacing: 0px;
@@ -66,7 +66,7 @@
   z-index: 5;
   cursor: pointer;
   user-select: none;
-  top: 22px;
+  top: 18px;
   right: 10px;
 }
 #overlay-button span {
@@ -154,8 +154,8 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
     display: none;
   }
 
-  h1 {
-    font-size: 30px;
+  .desktop-header h1 {
+    font-size: 24px;
     text-align: left;
   }
 

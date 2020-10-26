@@ -5,14 +5,16 @@
 
 <div class="product-card" id="{{ productObj.title }}-card">
   {{ productFilename | append:' [resize:200x200]' | image }}
+
   <div class="card-title">{{ productObj.title }}</div>
 </div>
 
 <script src="/js/basicLightbox.min.js"></script>
 <script>
-  var instance = basicLightbox.create("<img src={{ productObj.images }} />");
+
   document.getElementById("{{ productObj.title }}-card")
     .addEventListener("click", function(e) {
+      var instance = basicLightbox.create("<img src={{ productObj.images }} />");
       instance.show();
     });
 

@@ -9,6 +9,11 @@ jobs:
   github-pages:
     runs-on: ubuntu-16.04
     steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.6.0
+        with:
+          access_token: ${{ secrets.JEKYLL_PAT }}
+
       - uses: actions/checkout@v2
 
         # Use GitHub Actions' cache to shorten build times and decrease load on servers
@@ -19,10 +24,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gems-
 
-      - name: Deal with Imagemagick
+      - name: Deal with deps
         run: |-
           echo "DEBUG >"
-          sudo sed -i 's/^.*policy.*coder.*none.*PDF.*//' /etc/ImageMagick-6/policy.xml
+          sudo apt-get install libmagickwand-dev
 
 
       - uses: helaili/jekyll-action@2.0.1

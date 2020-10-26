@@ -1,0 +1,41 @@
+.top-bar {
+  height: 10px;
+  width: 100vw;
+  background: #212121;
+}
+
+.desktop-menu {
+   text-align: center;
+}
+
+.desktop-menu .nav-link {
+  display: inline-block;
+  margin: 1.6em 2.2em 0 2.2em;
+  padding: 0;
+  font-size: 12px;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.3em;
+  font-weight: 500;
+  color:  #212121;
+
+}
+
+.desktop-menu .nav-link.active {
+  border-bottom: 1px solid  #212121;
+  transition: border-color 170ms ease-in-out;
+}
+
+.desktop-header {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  color: #222;
+  font-family: ltc-bodoni-175;
+  font-size: 36px;
+  font-weight: 300;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0px;
+}
+

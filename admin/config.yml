@@ -1,0 +1,69 @@
+backend:
+  name: github
+  repo: fizal619/nideca_website
+  branch: master
+  site_domain: nideca.netlify.app
+
+local_backend: true
+
+media_folder: "images/uploads"
+
+collections:
+  - name: products # Used in routes, e.g., /admin/collections/blog
+    label: Product # Used in the UI
+    folder: "_products/" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    summary: "{{title}}"
+    fields: # The fields for each document, usually in front matter
+      - {label: Name, name: name, widget: string, required: false}
+      - {label: "Product Code", name: title, widget: string}
+      - label: Images
+        widget: image
+        name: images
+        default: /images/250.png
+      - {label: "Description", name: "description", widget: "markdown", required: false}
+
+  - name: tags
+    label: Tag
+    folder: "_tags/"
+    create: true
+    fields:
+      - label: Display Name
+        name: name
+        required: true
+      - label: Shortname
+        name: shortname
+        required: true
+      - label: URL Shortname
+        name: title
+        required: true
+      - label: "Products"
+        name: products
+        widget: relation
+        collection: products
+        value_field: title
+        multiple: true
+        search_fields: [ "name", "title" ]
+        display_fields: [ "name", "title" ]
+        required: true
+
+  - name: categories
+    label: Category
+    folder: "_categories/"
+    create: true
+    fields:
+      - label: Display Name
+        name: name
+        required: true
+      - label: URL Shortname
+        name: title
+        required: true
+      - label: "Tags"
+        name: tags
+        widget: relation
+        collection: tags
+        value_field: title
+        multiple: true
+        search_fields: [ "name", "title" ]
+        display_fields: [ "name" ]
+        required: true

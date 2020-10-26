@@ -30,6 +30,19 @@ jobs:
           sudo apt-get install libmagickwand-dev
 
 
-      - uses: helaili/jekyll-action@2.0.1
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.7'
+
+      - run: bundle install
+
+      - run: bundle exec jekyll build
+
+      - run: ls
+
+      - name: Deploy to GitHub Pages
+        uses: Cecilapp/GitHub-Pages-deploy@master
         env:
-          JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
+          EMAIL: fizal.sarif@gmail.com
+          GH_TOKEN: ${{ secrets.JEKYLL_PAT }}
+          BUILD_DIR: _site

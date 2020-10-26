@@ -22,19 +22,20 @@ images: /images/uploads/$filename
   echo " "
 done
 
+if [ "$CMD" == "run" ]; then
 
 for file in $SOURCE/*; do
   filename=$(basename $file)
   name="${filename%.*}"
   name=${name^^}
   cp $file $IMGS/$filename
-cat "\
+cat << EOM > $DEST/$name.md
 ---
 title: $name
 images: /images/uploads/$filename
 ---
-" > $DEST/$name.md
+EOM
 
 done
 
-
+fi

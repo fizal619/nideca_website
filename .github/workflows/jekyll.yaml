@@ -19,15 +19,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gems-
 
-      - name: Install Imagemagick
+      - name: Deal with Imagemagick
         run: |-
-          sudo apt-get install python-software-properties
-          sudo apt-get install software-properties-common
-          sudo add-apt-repository ppa:rwky/graphicsmagick
-          sudo apt-get update
-          sudo apt-get install graphicsmagick
           echo "DEBUG >"
-          cat /etc/ImageMagick-6/policy.xml | sed 's/none/read,write/g' | sudo tee /etc/ImageMagick-6/policy.xml
+          sudo sed -i 's/^.*policy.*coder.*none.*PDF.*//' /etc/ImageMagick-6/policy.xml
 
 
       - uses: helaili/jekyll-action@2.0.1

@@ -1,5 +1,8 @@
 .products-container {
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
 }
 
 .products-container p, .products-container p {
@@ -8,7 +11,7 @@
 }
 
 .product-card {
-  width: 160px;
+  min-width: 160px;
   display: inline-block;
   margin: 0 20px 0 0;
 }
@@ -25,4 +28,8 @@
 
 .card-img {
   cursor: pointer;
+}
+
+.card-title {
+  margin-top: 10px;
 }

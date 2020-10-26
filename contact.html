@@ -1,0 +1,121 @@
+---
+layout: main
+permalink: /contact
+---
+<link rel="stylesheet" href="/css/contact.css">
+
+<div class="contact-container">
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Let's Get In Touch</h2>
+        <br>
+        <p class="proxima size-15">
+          <strong>
+            PHONE:
+          </strong> <br>
+          Derrick Persaud (CEO): +1 (516) 502-4606 & +1 (516) 725-3735
+          <br>
+          Vishnu Ramjeet (Manager): +592 609 1890 & +592 220 1885
+          <br>
+          Angela Bharrat (Assistant Manager): +592 646 4125
+        </p>
+        <br>
+        <p class="proxima size-15">
+          <strong>EMAIL:</strong> <br>
+          <a href="mailto:nidecainvestments@gmail.com" class="proxima size-15">nidecainvestments@gmail.com</a>
+        </p>
+        <br>
+        <p class="proxima size-15">
+          <strong>ADDRESS:</strong> <br>
+            Lot 10-14 Happy Acres
+            <br>
+            East Coast Demerara
+            <br>
+            Guyana
+          </p>
+        </p>
+        <br>
+      </div>
+      <div class="col-md-6">
+        <h2>Send Us A Message</h2>
+        <br>
+        <form id="contact-form" action="https://formspree.io/f/mdopgrba" method="POST">
+          <label class="proxima size-15" for="name">Name</label>
+          <br>
+          <input type="text" placeholder="John Doe" name="name" id="contact-name" required>
+          <br>
+          <br>
+          <label class="proxima size-15" for="email">Email</label>
+          <br>
+          <input type="email"placeholder="john@example.com" name="email" id="contact-email" required>
+          <br>
+          <br>
+          <label class="proxima size-15" for="message">Message</label>
+          <br>
+          <textarea name="message" id="contact-message" width="100%" rows="10" required></textarea>
+          <br>
+          <br>
+          <button
+            class="btn btn-outline-primary g-recaptcha"
+            data-sitekey="6LcRq9sZAAAAAM-EUIpw76XtWYQh0OoZYgpnMOu5"
+            data-callback="submitForm"
+            data-action="submit"
+          >SUBMIT</button>
+          <br>
+          <br>
+          <p id="status"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+</div>
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+  window.addEventListener("DOMContentLoaded", function() {
+
+    window.submitForm = function(token) {
+     document.getElementById("contact-form").submit();
+   }
+
+    // get the form elements defined in your form HTML above
+    var form = document.getElementById("contact-form");
+    var status = document.getElementById("status");
+
+    // Success and Error functions for after the form is submitted
+    function success() {
+      form.reset();
+      status.innerHTML = "<p class=\"proxima size-15\">We got your message. Thanks for reaching out!</p>";
+    }
+
+    function error() {
+      status.innerHTML = "<p class=\"proxima size-15\"> Oops! There was a problem.<p>";
+    }
+
+    // handle the form submission event
+    form.addEventListener("submit", function(ev) {
+      ev.preventDefault();
+      var data = new FormData(form);
+      ajax(form.method, form.action, data, success, error);
+    });
+  });
+
+  // helper function for sending an AJAX request
+  function ajax(method, url, data, success, error) {
+    var xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        success(xhr.response, xhr.responseType);
+      } else {
+        error(xhr.status, xhr.response, xhr.responseType);
+      }
+    };
+    xhr.send(data);
+  }
+</script>

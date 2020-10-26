@@ -11,14 +11,17 @@ layout: main
   <div class="container">
 
     <h2>{{ page.name }} Products</h2>
-    <br>
     {% for tag in page.tags %}
       {% assign tagObj = site.tags | where:"title", tag  | first %}
+      <br>
       <p>{{ tagObj.shortname }}</p>
       {% include products_list.html products=tagObj.products summary=true %}
+      <br>
       <p class="view-more">
         <a href="{{ tagObj.slug }}" class="btn btn-outline-primary">VIEW MORE</a>
       </p>
+      <br>
+      <hr>
       <br>
     {% endfor %}
   </div>

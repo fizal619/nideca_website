@@ -3,6 +3,7 @@
 
 body {
   font-family: 'Lato', sans-serif;
+  overflow-x: hidden;
   text-rendering: optimizeLegibility;
 }
 
@@ -125,6 +126,7 @@ a.btn:hover, button.btn:hover {
 }
 
 @media only screen and (max-width: 500px) {
+
   .home h4 {
     font-size: 20px;
   }

@@ -1,8 +1,19 @@
+<link rel="stylesheet" href="/css/basicLightbox.min.css">
 
 {% assign productObj = site.products | where:"title", include.product | first %}
 {% assign productFilename = productObj.images | split:"/" | last  %}
 
-<div class="product-card">
+<div class="product-card" id="{{ productObj.title }}-card">
   {{ productFilename | append:' [resize:200x200]' | image }}
   <div class="card-title">{{ productObj.title }}</div>
 </div>
+
+<script src="/js/basicLightbox.min.js"></script>
+<script>
+  var instance = basicLightbox.create("<img src={{ productObj.images }} />");
+  document.getElementById("{{ productObj.title }}-card")
+    .addEventListener("click", function(e) {
+      instance.show();
+    });
+
+</script>

@@ -1,7 +1,8 @@
 
 {% assign productObj = site.products | where:"title", include.product | first %}
+{% assign productFilename = productObj.images | split:"/" | last  %}
 
 <div class="product-card">
-  <div class="card-img" id="product-{{ productObj.title }}-image" style="background-image: url('{{ productObj.images }}');"></div>
+  {{ productFilename | append:' [resize:200x200]' | image }}
   <div class="card-title">{{ productObj.title }}</div>
 </div>

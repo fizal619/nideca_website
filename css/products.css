@@ -16,10 +16,11 @@
   margin: 0 20px 0 0;
 }
 
-.product-card .card-img {
+.product-card img {
   height: 200px;
   width: 100%;
-  background-size: cover;
+  object-fit: cover;
+  border-radius: 3px;
 }
 
 .product-card .card-title {

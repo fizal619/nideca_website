@@ -2,6 +2,7 @@
 name: Laminate Flooring
 shortname: Laminate
 title: laminate-floring
+cover_photo: /images/uploads/laminate_cover.jpg
 products:
   - KN2250
   - KN2251

@@ -1,0 +1,18 @@
+---
+permalink: /travertine-gallery
+layout: main
+---
+<link rel="stylesheet" href="/css/category.css">
+
+{%- assign travertine = site.tags | where:"name", "Travertine" | first -%}
+
+<div class="category-container">
+  <br>
+  <br>
+  <br>
+  <div class="container">
+    <h2>{{ travertine.name }}</h2>
+    <br>
+    {% include products_list.html products=travertine.products cover=travertine.cover_photo gallery=travertine.gallery %}
+  </div>
+</div>

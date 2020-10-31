@@ -37,6 +37,9 @@ collections:
       - label: URL Shortname
         name: title
         required: true
+      - label: Cover Photo (Single)
+        name: cover_photo
+        widget: image
       - label: "Products"
         name: products
         widget: relation

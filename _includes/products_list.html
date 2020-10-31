@@ -6,16 +6,34 @@
   {% assign overflow = "scroll" %}
   {% assign flex = "nowrap" %}
   {% assign limit = 10 %}
+  {% assign justify = "initial" %}
 {% else %}
   {% assign overflow = "auto" %}
   {% assign flex = "wrap" %}
   {% assign limit = include.products.size %}
+  {% assign justify = "center" %}
 {% endif %}
 
 <div
   class="products-container"
-  style="overflow-x: {{overflow}};flex-wrap: {{flex}};"
+  style="overflow-x: {{overflow}};flex-wrap: {{flex}};justify-content: {{justify}}"
 >
+
+  {% if include.cover %}
+    <img src="{{ include.cover }}"  class="img-fluid img-cover" alt="Responsive cover image">
+  {% endif %}
+
+  {% if include.gallery %}
+    <div class="glide">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+          {%- for image_src in include.gallery -%}
+            <li class="glide__slide"><img src="{{ image_src }}" alt="{{ image_src }}"></li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  {% endif %}
 
   {% if include.summary %}
     {% for product in include.products limit: 10 %}
@@ -30,3 +48,11 @@
   <br>
 </div>
 
+<script>
+  new Glide('.glide', {
+    type: 'carousel',
+    startAt: 0,
+    perView: 1,
+    autoplay: 5000
+  }).mount()
+</script>

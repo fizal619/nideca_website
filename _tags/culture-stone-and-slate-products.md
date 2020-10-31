@@ -2,6 +2,7 @@
 name: Culture Stone and Slate Products
 shortname: Stone and Slate Products
 title: culture-stone-and-slate-products
+cover_photo: /images/uploads/culture_stone_cover.jpg
 products:
   - CS012
   - CS016

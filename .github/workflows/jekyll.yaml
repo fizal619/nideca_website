@@ -32,7 +32,7 @@ jobs:
 
       - uses: actions/setup-ruby@v1
         with:
-          ruby-version: '2.7.1'
+          ruby-version: '2.7'
 
       - run: |-
           bundle install --jobs 4 --retry 3

@@ -23,7 +23,7 @@ email: nidecainvestments@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   We deal only with high quality home products, such as porcelain tiles, granite tiles and counter tops, bathroom and bathroom fixtures and many more items.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://nideca.fizal.me" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://nidecainvestmentsinc.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
 

@@ -55,7 +55,7 @@ jobs:
           EMAIL: fizal.sarif@gmail.com
           GH_TOKEN: ${{ secrets.JEKYLL_PAT }}
           BUILD_DIR: _site
-          CNAME: nideca.fizal.me
+          CNAME: nidecainvestmentsinc.com
           JEKYLL_SITE: YES
 
 

@@ -42,12 +42,11 @@ jobs:
       - run: ls
 
       - name: Deploy to GitHub Pages
-        uses: Cecilapp/GitHub-Pages-deploy@v2
+        uses: Cecilapp/GitHub-Pages-deploy@v3
         env:
           EMAIL: fizal.sarif@gmail.com
           GH_TOKEN: ${{ github.token }}
           BUILD_DIR: _site
-          CNAME: nidecainvestmentsinc.com
           JEKYLL_SITE: YES
 
 

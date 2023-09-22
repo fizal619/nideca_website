@@ -45,7 +45,7 @@ jobs:
         uses: Cecilapp/GitHub-Pages-deploy@v2
         env:
           EMAIL: fizal.sarif@gmail.com
-          GH_TOKEN: ${{ secrets.JEKYLL_PAT }}
+          GH_TOKEN: ${{ github.token }}
           BUILD_DIR: _site
           CNAME: nidecainvestmentsinc.com
           JEKYLL_SITE: YES
